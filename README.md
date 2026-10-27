@@ -33,10 +33,11 @@ irm "https://raw.githubusercontent.com/PaladinXV/Simple-Windows-11-Setup-Debloat
 
 ## 📝 Notes
 
-- Best to use on a fresh install of Windows 11
-- Creating a System Restore Point is recommended
-- Most changes can be reverted
+- Best to use on a fresh install of Windows 11.
+- Creating a System Restore Point is recommended.
+- Most changes can be reverted.
 - Tested on Windows 11 25H2/26H2 Home/Pro. Other versions may have limited compatibility. 
+- AI was used in the process of creating this tool.
 
 ## 📄 Documentation
 Read here - https://github.com/PaladinXV/Simple-Windows-11-Setup-Debloat-Tool/wiki
