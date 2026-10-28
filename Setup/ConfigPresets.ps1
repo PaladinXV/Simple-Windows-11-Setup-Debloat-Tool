@@ -76,6 +76,14 @@ $AggressiveExtras = @(
     'Disable "Controller guide button"'
     'Disable "Controller opening Game Bar"'
     'Disable "Xbox Mode"'
+    'Disable "Compatibility Appraiser"'
+    'Disable "Autochk Proxy"'
+    'Disable "CEIP Consolidator"'
+    'Disable "CEIP USB Data"'
+    'Disable "Disk Diagnostic Data Collector"'
+    'Disable "Feedback (DmClient)"'
+    'Disable "Error Reporting Queue"'
+    'Disable "Recommended Troubleshooting Scanner"'
 )
 
 $ConfigPresets = [ordered]@{

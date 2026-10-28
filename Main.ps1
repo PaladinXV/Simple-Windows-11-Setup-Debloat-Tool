@@ -53,6 +53,7 @@ $ModuleFiles = @(
     "Setup\Laptop.ps1",
     "Setup\Notifications.ps1",
     "Setup\DNS.ps1",
+    "Setup\ScheduledTasks.ps1",
     "Setup\ConfigPresets.ps1",
     "Setup\UnpinApps.ps1",
     "UI\Dialogs.ps1",
@@ -82,7 +83,7 @@ foreach ($entry in (@($AppRemovals) + @($UnpinTweaks))) {
     }
 }
 
-$Tweaks = @() + $PersonalizationTweaks + $StartMenuTweaks + $PrivacyTweaks + $MiscellaneousTweaks + $WindowsUpdateTweaks + $DefenderTweaks + $EdgeTweaks + $FolderOptionsTweaks + $MouseTweaks + $SoundTweaks + $TaskbarTweaks + $GamingTweaks + $PowerTweaks + $LaptopTweaks + $NotificationsTweaks + $DnsTweaks
+$Tweaks = @() + $PersonalizationTweaks + $StartMenuTweaks + $PrivacyTweaks + $MiscellaneousTweaks + $WindowsUpdateTweaks + $DefenderTweaks + $EdgeTweaks + $FolderOptionsTweaks + $MouseTweaks + $SoundTweaks + $TaskbarTweaks + $GamingTweaks + $ScheduledTaskTweaks + $PowerTweaks + $LaptopTweaks + $NotificationsTweaks + $DnsTweaks
 
 [xml]$xaml = Get-Content -LiteralPath (Join-Path $ToolRoot "UI\Layout.xaml") -Raw -Encoding UTF8
 try {
@@ -417,7 +418,7 @@ $BtnAppsInstall.Add_Click({ Show-AppsSubView -View "Install" })
 Show-AppsSubView -View "Uninstall"
 
 $excludedFromConfig = @("System Apps")
-$configCategoryOrder = @("Folder Options", "Personalization", "Start Menu", "Taskbar", "Notifications", "Privacy & Security", "Miscellaneous", "Microsoft Edge", "Defender", "Windows Updates", "Power", "Laptop", "Mouse", "Sound", "Gaming", "DNS")
+$configCategoryOrder = @("Folder Options", "Personalization", "Start Menu", "Taskbar", "Notifications", "Privacy & Security", "Miscellaneous", "Microsoft Edge", "Defender", "Windows Updates", "Power", "Laptop", "Mouse", "Sound", "Gaming", "Scheduled Tasks (Telemetry)", "DNS")
 $allConfigCategories = $Tweaks | ForEach-Object { $_.Category } | Where-Object { $_ -notin $excludedFromConfig } | Sort-Object -Unique
 
 $configCategories = @($configCategoryOrder | Where-Object { $_ -in $allConfigCategories }) + @($allConfigCategories | Where-Object { $_ -notin $configCategoryOrder } | Sort-Object)
